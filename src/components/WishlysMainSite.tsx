@@ -640,7 +640,7 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
             className="text-2xl sm:text-3xl text-[#3B1E08] font-serif font-bold mt-1"
             style={{ fontFamily: "'Playfair Display', 'Cormorant Garamond', serif" }}
           >
-            Luxury Invitation Poster
+            ఆత్మీయ ఆహ్వానం
           </h2>
 
           <MarigoldDivider />
