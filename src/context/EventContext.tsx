@@ -116,6 +116,7 @@ export const DEFAULT_CONFIG: FullEventConfig = {
 
   sanskritBlessing: {
     shloka: "ఓం శ్రీ గణేశాయ నమః",
+
     telugu: "శుభ గృహప్రవేశం | సర్వేజనాః సుఖినోభవంతు",
     meaning:
       "With the divine blessings of Lord Ganesha, may our home always overflow with happiness, peace, and abundance.",
@@ -148,7 +149,8 @@ export const DEFAULT_CONFIG: FullEventConfig = {
   events: [
     {
       id: "housewarming",
-      title: "శుభ గృహప్రవేశ మహోత్సవం",
+      title: "శుభ గృహప్రవేశ మహోత్సవం| శ్రీ పరాభవ నామ సంవత్సరే
+కార్తీక మాసే | కృష్ణ పక్షే | విదియ యుక్తా ",
       date: "2026-11-25",
       displayDate: "25 November 2026",
       day: "Wednesday",
@@ -168,7 +170,7 @@ export const DEFAULT_CONFIG: FullEventConfig = {
       date: "2026-11-26",
       displayDate: "26 November 2026",
       day: "Thursday",
-      time: "Morning onwards",
+      time: "ఉదయం 8:00 గంటలకు|మధ్యాహ్నం 12:00 గంటలకు విందు",
       theme: "morning",
       emoji: "🙏",
       rituals: [
