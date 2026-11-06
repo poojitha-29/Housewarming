@@ -26,24 +26,24 @@ export default function BlessingsBook() {
 
     setSubmitting(true);
 
-    const whatsappMessage =
-      `🙏 New Housewarming Blessing\n\n` +
-      `Name: ${name.trim()}\n\n` +
-      `Blessing:\n${message.trim()}\n\n` +
-      `For: Srikanth & Sivapriya`;
+    const whatsappMessage = [
+      "🙏 New Housewarming Blessing",
+      "",
+      `Name: ${name.trim()}`,
+      "",
+      "Blessing:",
+      message.trim(),
+      "",
+      "For: Srikanth & Sivapriya",
+    ].join("\n");
 
     const whatsappURL =
-      `https://wa.me/918106868686?text=${encodeURIComponent(whatsappMessage)}`;
+      `https://api.whatsapp.com/send?phone=918106868686&text=${encodeURIComponent(
+        whatsappMessage
+      )}`;
 
-    window.open(whatsappURL, "_blank");
-
-    setSubmitting(false);
-    setSubmitted(true);
-
-    setName("");
-    setMessage("");
-
-    setTimeout(() => setSubmitted(false), 3000);
+    // Redirect directly to WhatsApp
+    window.location.href = whatsappURL;
   };
 
   return (
