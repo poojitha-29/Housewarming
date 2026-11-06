@@ -10,24 +10,7 @@ interface Blessing {
 }
 
 const DEMO_BLESSINGS: Blessing[] = [
-  {
-    id: "1",
-    name: "Ravi & Sunitha",
-    message: "Wishing Srikanth, Sivapriya and your sweet daughters a lifetime of happiness, peace, and abundance in your dream home! May every corner be filled with love and laughter. 🏠🌸",
-    timestamp: "2026-11-01",
-  },
-  {
-    id: "2",
-    name: "Prasad Family",
-    message: "May this sacred new abode at On Cloud 33 be an eternal sanctuary of warmth, health, and togetherness. Heartiest Grihapravesham wishes to the entire family! 🙏✨",
-    timestamp: "2026-11-02",
-  },
-  {
-    id: "3",
-    name: "Anand & Kavitha",
-    message: "A new home is a golden chapter! May Almighty shower his choicest blessings on Srikanth, Sivapriya & both elder daughters. Looking forward to celebrating with you! 🪔",
-    timestamp: "2026-11-03",
-  },
+ 
 ];
 
 export default function BlessingsBook() {
