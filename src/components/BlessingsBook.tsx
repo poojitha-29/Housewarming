@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Heart, Loader, BookHeart } from "lucide-react";
@@ -9,9 +10,7 @@ interface Blessing {
   timestamp: string;
 }
 
-const DEMO_BLESSINGS: Blessing[] = [
- 
-];
+const DEMO_BLESSINGS: Blessing[] = [];
 
 export default function BlessingsBook() {
   const [blessings, setBlessings] = useState<Blessing[]>(DEMO_BLESSINGS);
@@ -20,49 +19,30 @@ export default function BlessingsBook() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!name.trim() || !message.trim()) return;
 
     setSubmitting(true);
 
-    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-    const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+    const whatsappMessage =
+      `🙏 New Housewarming Blessing\n\n` +
+      `Name: ${name.trim()}\n\n` +
+      `Blessing:\n${message.trim()}\n\n` +
+      `For: Srikanth & Sivapriya`;
 
-    if (supabaseUrl && supabaseKey) {
-      try {
-        const { createClient } = await import("@supabase/supabase-js");
-        const supabase = createClient(supabaseUrl, supabaseKey);
-        const { data, error } = await supabase
-          .from("blessings")
-          .insert([{ name: name.trim(), message: message.trim() }])
-          .select()
-          .single();
-        if (!error && data) {
-          setBlessings((prev) => [
-            { ...data, timestamp: new Date().toISOString().split("T")[0] },
-            ...prev,
-          ]);
-        }
-      } catch {
-        // Fallback
-      }
-    } else {
-      setBlessings((prev) => [
-        {
-          id: Date.now().toString(),
-          name: name.trim(),
-          message: message.trim(),
-          timestamp: new Date().toISOString().split("T")[0],
-        },
-        ...prev,
-      ]);
-    }
+    const whatsappURL =
+      `https://wa.me/918106868686?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappURL, "_blank");
 
     setSubmitting(false);
     setSubmitted(true);
+
     setName("");
     setMessage("");
+
     setTimeout(() => setSubmitted(false), 3000);
   };
 
@@ -87,6 +67,7 @@ export default function BlessingsBook() {
         >
           Digital Blessings Book
         </h2>
+
         <p className="text-[#78716C] text-sm">
           Leave your heartfelt blessings and warm wishes for Srikanth, Sivapriya &amp; family 🙏
         </p>
@@ -116,6 +97,7 @@ export default function BlessingsBook() {
             required
             className="w-full bg-[#FAF8F5] border border-[#E8DEC8] text-[#1C1917] placeholder-[#A8A29E] rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#C5A059] transition-colors"
           />
+
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -136,7 +118,7 @@ export default function BlessingsBook() {
                 className="text-[#0F382C] font-semibold text-sm flex items-center gap-2"
               >
                 <Heart size={15} className="fill-[#0F382C]" />
-                Your blessing has been lovingly recorded! Thank you 🙏
+                WhatsApp opened! Please send your blessing 🙏
               </motion.p>
             )}
           </AnimatePresence>
@@ -146,7 +128,12 @@ export default function BlessingsBook() {
             disabled={submitting}
             className="ml-auto flex items-center gap-2 bg-[#1E3A2F] hover:bg-[#152921] disabled:opacity-50 text-white text-xs sm:text-sm font-semibold px-7 py-3 rounded-full transition-all shadow-sm active:scale-95"
           >
-            {submitting ? <Loader size={15} className="animate-spin" /> : <Send size={15} />}
+            {submitting ? (
+              <Loader size={15} className="animate-spin" />
+            ) : (
+              <Send size={15} />
+            )}
+
             {submitting ? "Sending…" : "Send Blessing"}
           </button>
         </div>
@@ -168,15 +155,22 @@ export default function BlessingsBook() {
                   <div className="w-10 h-10 rounded-full bg-[#FAF6ED] border border-[#C5A059]/40 flex items-center justify-center text-[#99582A] font-serif font-bold text-base">
                     {b.name.charAt(0).toUpperCase()}
                   </div>
+
                   <div>
-                    <p className="text-[#1C1917] font-semibold text-sm">{b.name}</p>
-                    <p className="text-[#A8A29E] text-[10px]">{b.timestamp}</p>
+                    <p className="text-[#1C1917] font-semibold text-sm">
+                      {b.name}
+                    </p>
+                    <p className="text-[#A8A29E] text-[10px]">
+                      {b.timestamp}
+                    </p>
                   </div>
                 </div>
+
                 <div className="flex items-center gap-1 text-[#851D2D]">
                   <Heart size={14} className="fill-[#851D2D]" />
                 </div>
               </div>
+
               <p
                 className="text-[#57534E] text-sm leading-relaxed italic font-serif"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
