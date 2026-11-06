@@ -222,17 +222,13 @@ export default function WishlysFrontDoor({ onOpen }: WishlysFrontDoorProps) {
                   ))}
                 </div>
 
-                {/* 📛 GOLDEN BRASS NAMEPLATE (Matches Screenshot 1) 📛 */}
-                <div className="absolute top-[85px] left-1/2 -translate-x-1/2 z-20 w-[120px] sm:w-[135px] py-2 px-3 rounded-md border border-[#FDFBF7] shadow-[0_4px_10px_rgba(0,0,0,0.35)] text-center bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#AA7C11]">
-                  <p className="text-[#2B1E17] font-serif font-black text-xs sm:text-sm tracking-widest leading-tight">
-                    {config.door.flatNumber}
-                  </p>
-                  <p className="text-[#3A2A1A] font-sans font-bold text-[7px] sm:text-[8px] tracking-[0.18em] uppercase mt-0.5">
-                    {config.door.nameplateLine1}
-                  </p>
-                  <p className="text-[#3A2A1A] font-sans font-bold text-[7px] sm:text-[8px] tracking-[0.18em] uppercase">
-                    {config.door.nameplateLine2}
-                  </p>
+                {/* 🪔 SRI SATYANARAYANA SWAMY IMAGE ON THE DOOR */}
+                <div className="absolute top-[70px] left-1/2 -translate-x-1/2 z-20 w-[125px] h-[150px] sm:w-[140px] sm:h-[165px] rounded-xl overflow-hidden border-[3px] border-[#D4AF37] bg-[#FFF8E8] shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
+                  <img
+                    src="/satyanarayana-vratam.png"
+                    alt="Sri Satyanarayana Swamy"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
 
                 {/* 🔘 BRASS OVAL DOOR HANDLE (Matches Screenshot 1) */}
