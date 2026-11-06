@@ -152,7 +152,7 @@ export const DEFAULT_CONFIG: FullEventConfig = {
       date: "2026-11-25",
       displayDate: "25 November 2026",
       day: "Wednesday",
-      time: "9:30 PM onwards",
+      time: "9:30 PM  కర్కాటక లగ్నమున",
       theme: "night",
       emoji: "🏡",
       rituals: [
