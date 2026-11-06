@@ -1,6 +1,7 @@
+
 // ============================================================
-// CENTRAL EVENT CONFIGURATION FILE
-// Edit this file to update all event details across the site
+// CENTRAL EVENT CONFIGURATION
+// Srikanth & Sivapriya – Housewarming Invitation
 // ============================================================
 
 export const EVENT_CONFIG = {
@@ -8,24 +9,30 @@ export const EVENT_CONFIG = {
     name1: "Srikanth",
     name2: "Sivapriya",
     displayName: "Srikanth & Sivapriya",
-    familyTitle: "Srikanth, Sivapriya & Daughters",
-    daughters: "Two Elder Daughters",
-    familyBlessing: "Blessed with their two beloved daughters, beginning a golden chapter of joy, prosperity, and peace.",
+    familyTitle: "Srikanth, Sivapriya, Sangeetha & Poojitha",
+    daughters: "Two Daughters",
+    familyBlessing:
+      "Blessed with their two beloved daughters, beginning a golden chapter of joy, prosperity, and peace.",
     contact: "8106868686",
     phoneLink: "tel:+918106868686",
-    whatsappLink: "https://wa.me/918106868686?text=Dear%20Srikanth%20%26%20Sivapriya%2C%20Heartiest%20congratulations%20on%20your%20new%20home%20at%20On%20Cloud%2033!%20Looking%20forward%20to%20joining%20the%20celebrations.",
+    whatsappLink:
+      "https://wa.me/918106868686?text=Dear%20Srikanth%20%26%20Sivapriya%2C%20Heartiest%20congratulations%20on%20your%20new%20home!",
   },
 
   occasion: "Sacred Housewarming Ceremony (Grihapravesham)",
 
   sanskritBlessing: {
-    shloka: "ॐ श्री गणेशाय नमः । गृहे सुखं वसन्तु, धनधान्यसमृद्धिः अस्तु, मङ्गलं भवतु ॥",
-    telugu: "॥ శుభ గృహప్రవేశం ॥ సర్వేజనాః సుఖినోభవంతు ॥",
-    meaning: "With the divine blessings of Lord Ganesha, may our home always overflow with happiness, peace, and abundance.",
+    shloka: "ఓం శ్రీ గణేశాయ నమః",
+    telugu: "శుభ గృహప్రవేశం | సర్వేజనాః సుఖినోభవంతు",
+    meaning:
+      "With the divine blessings of Lord Ganesha, may our home always overflow with happiness, peace, and abundance.",
   },
 
   invitationMessage:
     "With the divine blessings of God, our elders, and our beloved family, we warmly invite you and your family to grace the auspicious Grihapravesham of our dream home. Your sacred presence and heartfelt blessings will sanctify our new abode.",
+
+  posterMessage:
+    "We warmly invite you and your family to celebrate this beautiful milestone with us. Your presence and blessings will make our special occasion even more memorable.",
 
   venue: {
     name: "On Cloud 33 – Urbanrise",
@@ -41,30 +48,63 @@ export const EVENT_CONFIG = {
 
   events: [
     {
-      id: "night-celebration",
-      title: "Night Celebration & Sandhya Deepotsav",
+      id: "housewarming",
+      title: "శుభ గృహప్రవేశ మహోత్సవం",
       date: "2026-11-25",
       displayDate: "25 November 2026",
       day: "Wednesday",
-      time: "Evening onwards",
-      // Update time above when confirmed, e.g. "6:30 PM onwards"
+      time: "9:30 PM onwards",
       theme: "night",
-      emoji: "🪔",
-      rituals: ["Deepa Prajvalana (Lighting of Sacred Lamps)", "Family Sangeet & Musical Evening", "Festive Dinner Feast"],
-      description: "An enchanting pre-celebration evening bathed in golden lights, melodious music, laughter, and culinary delights.",
+      emoji: "🏡",
+      rituals: [
+        "Sacred Gruhapravesham Ceremony",
+      ],
+      description:
+        "మా జీవితంలో ఒక నూతన అధ్యాయానికి శ్రీకారం చుడుతూ, మా స్వగృహంలో గృహప్రవేశ శుభకార్యాన్ని నిర్వహించుకుంటున్నాము. ఈ శుభసందర్భంగా మీరు మీ కుటుంబ సభ్యులతో కలిసి విచ్చేసి, మీ అమూల్యమైన ఆశీస్సులతో మా ఇంటిని ఆనందం, ఐశ్వర్యం, సుఖశాంతులతో నింపవలసిందిగా మనస్ఫూర్తిగా ఆహ్వానిస్తున్నాము. మీ రాకే మాకు ఎంతో ఆనందం, మీ ఆశీస్సులే మాకు కొండంత బలం.",
     },
     {
-      id: "housewarming",
-      title: "Sacred Grihapravesham Ceremony",
+      id: "satyanarayana-vratam",
+      title: "శ్రీ సత్యనారాయణ స్వామి వ్రతం",
       date: "2026-11-26",
       displayDate: "26 November 2026",
       day: "Thursday",
       time: "Morning onwards",
-      // Update time above when confirmed, e.g. "8:15 AM onwards (Auspicious Muhurtham)"
       theme: "morning",
-      emoji: "🌸",
-      rituals: ["Vastu Puja & Navagraha Homam", "Ksheera Paal (Sacred Milk Boiling)", "Sri Satyanarayana Swamy Vratam", "Maha Prasadam & Feast"],
-      description: "The traditional Vedic housewarming ceremony welcoming Lakshmi & prosperity with sacred chants and timeless rituals.",
+      emoji: "🙏",
+      rituals: [
+        "Sri Satyanarayana Swamy Vratam",
+        "Maha Prasadam",
+      ],
+      description:
+        "మా నూతన గృహంలో శ్రీ సత్యనారాయణ స్వామి వారి వ్రతాన్ని భక్తిశ్రద్ధలతో నిర్వహించుకుంటున్న ఈ పవిత్రమైన శుభసందర్భంగా, మీరు మీ కుటుంబ సభ్యులతో కలిసి విచ్చేసి స్వామివారి దివ్య ఆశీస్సులు పొందవలసిందిగా మనస్ఫూర్తిగా ఆహ్వానిస్తున్నాము. స్వామివారి కృపాకటాక్షాలు మీ అందరి జీవితాల్లో సుఖసంతోషాలు, ఆయురారోగ్యాలు, అష్టైశ్వర్యాలను ప్రసాదించాలని కోరుకుంటున్నాము. మీ రాకతో ఈ శుభకార్యం మరింత శోభాయమానం కావాలని ఆకాంక్షిస్తున్నాము.",
+    },
+  ],
+
+  // Four family contact persons
+  familyContacts: [
+    {
+      id: "contact-1",
+      name: "Srikanth",
+      phone: "8106868686",
+      phoneLink: "tel:+918106868686",
+    },
+    {
+      id: "contact-2",
+      name: "Sivapriya",
+      phone: "9010723544",
+      phoneLink: "tel:+919010723544",
+    },
+    {
+      id: "contact-3",
+      name: "Sangeetha",
+      phone: "9182965179",
+      phoneLink: "tel:+919182965179",
+    },
+    {
+      id: "contact-4",
+      name: "Poojitha",
+      phone: "8106242929",
+      phoneLink: "tel:+918106242929",
     },
   ],
 
@@ -72,7 +112,7 @@ export const EVENT_CONFIG = {
   timezoneDisplay: "IST",
 
   calendarDefaults: {
-    duration: 3, // hours
+    duration: 3,
     organizer: "Srikanth & Sivapriya",
   },
 
@@ -80,10 +120,17 @@ export const EVENT_CONFIG = {
   siteName: "Srikanth & Sivapriya – Grihapravesham Invitation",
 } as const;
 
-// Supabase config (optional – leave empty to use local demo)
+// ============================================================
+// SUPABASE CONFIGURATION
+// ============================================================
+
 export const SUPABASE_CONFIG = {
-  get url() { return (import.meta.env.VITE_SUPABASE_URL as string) || ""; },
-  get anonKey() { return (import.meta.env.VITE_SUPABASE_ANON_KEY as string) || ""; },
+  get url() {
+    return (import.meta.env.VITE_SUPABASE_URL as string) || "";
+  },
+  get anonKey() {
+    return (import.meta.env.VITE_SUPABASE_ANON_KEY as string) || "";
+  },
 };
 
 export type EventConfig = typeof EVENT_CONFIG;
