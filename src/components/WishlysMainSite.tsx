@@ -10,20 +10,10 @@ import {
   DoorOpen,
   Flame,
   Music,
-  Volume2,
-  VolumeX,
-  ExternalLink,
   Navigation,
   Phone,
-  MessageCircle,
-  Share2,
-  Download,
-  Building2,
-  Heart,
-  Send,
-  Loader
+  MessageCircle
 } from "lucide-react";
-import html2canvas from "html2canvas";
 
 /**
  * EXACT WISHLYS HOUSEWARMING MAIN INVITATION SITE
@@ -167,7 +157,8 @@ interface WishlysMainSiteProps {
 
 export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSiteProps) {
   const { config } = useEventConfig();
-  const { hosts, venue, events, gallery, sanskritBlessing, invitationHeading, invitationMessage, posterMessage } = config;
+  const { hosts, venue, events, gallery, sanskritBlessing, invitationMessage, posterMessage } = config;
+  const invitationHeading = "శుభ గృహప్రవేశం 🙏";
   const [evNight, evMorning] = events;
 
   // Countdown to 25 November 2026
@@ -239,39 +230,6 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
   // Gallery state
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
-  // Poster State & Download
-  const posterRef = React.useRef<HTMLDivElement>(null);
-  const [isDownloadingPoster, setIsDownloadingPoster] = useState(false);
-  const [showPosterModal, setShowPosterModal] = useState(false);
-  const [linkCopied, setLinkCopied] = useState(false);
-
-  const handleDownloadPoster = async () => {
-    if (!posterRef.current || isDownloadingPoster) return;
-    setIsDownloadingPoster(true);
-    try {
-      const canvas = await html2canvas(posterRef.current, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: "#FFF9EE",
-      });
-      const link = document.createElement("a");
-      link.download = "Srikanth-Sivapriya-Housewarming-Invitation.png";
-      link.href = canvas.toDataURL("image/png");
-      link.click();
-    } catch (err) {
-      console.error("Poster download error", err);
-    } finally {
-      setIsDownloadingPoster(false);
-    }
-  };
-
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setLinkCopied(true);
-    setTimeout(() => setLinkCopied(false), 2500);
-  };
-
-  
   return (
     <div
       className="min-h-screen text-[#3B1E08] font-sans antialiased overflow-x-hidden relative selection:bg-[#E0A458] selection:text-white"
@@ -380,7 +338,7 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
             </div>
           </div>
 
-          {/* Shubh Griha Pravesh in Red Cursive Script */}
+          {/* శుభ గృహప్రవేశం 🙏 in Red Cursive Script */}
           <h2
             className="text-3xl sm:text-4xl text-[#9E1B32] font-script"
             style={{ fontFamily: "'Great Vibes', cursive" }}
@@ -395,10 +353,6 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
           >
             {hosts.familyTitle}
           </h1>
-
-          <p className="text-[#8D6E63] text-xs font-sans tracking-[0.25em] uppercase font-bold mt-1.5">
-            {hosts.daughters}
-          </p>
 
           <p className="text-[#5D4037] text-xs sm:text-sm mt-4 max-w-xs mx-auto leading-relaxed font-sans">
             {invitationMessage}
@@ -693,9 +647,11 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
 
           {/* High-Resolution Printable / Downloadable Poster Card */}
           <div
-            ref={posterRef}
-            className="mt-4 p-6 rounded-3xl bg-gradient-to-b from-[#FFFDF9] to-[#FFF3E0] border-2 border-[#E0A458] shadow-[0_12px_30px_rgba(180,120,60,0.15)] relative overflow-hidden text-center"
+            className="mt-4 p-6 rounded-[28px] bg-gradient-to-b from-[#FFFDF9] via-[#FFF8EC] to-[#FCE8C8] border-[3px] border-[#C99A43] shadow-[0_16px_38px_rgba(120,65,20,0.18)] relative overflow-hidden text-center"
           >
+            <div className="absolute inset-[7px] rounded-[21px] border border-[#D9B56E]/70 pointer-events-none" />
+            <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-[#E7BD70]/15 blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-[#9E1B32]/[0.06] blur-2xl pointer-events-none" />
             {/* Ornate Gold Corner Borders */}
             <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-[#B78103]" />
             <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-[#B78103]" />
@@ -723,22 +679,23 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
             </div>
 
             <p
-              className="text-2xl text-[#9E1B32] font-script"
-              style={{ fontFamily: "'Great Vibes', cursive" }}
+              className="relative text-[27px] leading-tight text-[#9E1B32] font-semibold font-serif drop-shadow-[0_1px_0_rgba(201,154,67,0.25)]"
+              style={{ fontFamily: "'Noto Serif Telugu', 'Gautami', serif" }}
             >
               {invitationHeading}
             </p>
+            <div className="mx-auto mt-2 mb-3 flex items-center justify-center gap-2">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#C99A43]" />
+              <span className="text-[#C99A43] text-xs">✦ ❖ ✦</span>
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#C99A43]" />
+            </div>
 
             <h3
-              className="text-xl font-serif font-bold text-[#3B1E08] mt-1"
+              className="relative text-xl font-serif font-bold text-[#3B1E08] mt-1 tracking-wide"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               {hosts.familyTitle}
             </h3>
-
-            <p className="text-[#8D6E63] text-[10px] font-sans tracking-[0.2em] uppercase font-bold mt-1">
-              {hosts.daughters}
-            </p>
 
             <p className="text-xs text-[#5D4037] mt-3 max-w-[280px] mx-auto leading-relaxed italic">
               "{posterMessage}"
@@ -782,35 +739,6 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
             </div>
           </div>
 
-          {/* Action Buttons for Poster */}
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-            <button
-              onClick={handleDownloadPoster}
-              disabled={isDownloadingPoster}
-              className="bg-[#9E1B32] hover:bg-[#7F1426] text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-xs flex items-center gap-1.5 transition-colors cursor-pointer"
-            >
-              <Download size={13} />
-              <span>{isDownloadingPoster ? "Generating..." : "Download Poster (HD)"}</span>
-            </button>
-
-            <a
-              href={hosts.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#2E7D32] hover:bg-[#1E5D22] text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-xs flex items-center gap-1.5 transition-colors"
-            >
-              <MessageCircle size={13} />
-              <span>Share on WhatsApp</span>
-            </a>
-
-            <button
-              onClick={handleCopyLink}
-              className="bg-white hover:bg-[#FFF4E4] text-[#851D2D] border border-[#EAD5BE] text-xs font-semibold px-4 py-2.5 rounded-full shadow-xs flex items-center gap-1.5 transition-colors cursor-pointer"
-            >
-              <Share2 size={13} />
-              <span>{linkCopied ? "Link Copied! ✓" : "Copy Link"}</span>
-            </button>
-          </div>
         </section>
 
         
@@ -904,31 +832,34 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
           </div>
 
           {/* Family Contacts - shown when names and phone numbers are provided */}
-          {config.familyContacts?.some((person) => person.name?.trim() && person.phone?.trim()) && (
-            <div className="mt-6 pt-4 border-t border-[#EAD5BE]">
-              <p className="text-[#9E1B32] text-xs uppercase tracking-widest font-semibold">
-                For any assistance, contact
-              </p>
-              <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {config.familyContacts
-                  .filter((person) => person.name?.trim() && person.phone?.trim())
-                  .map((person) => (
-                    <a
-                      key={person.id}
-                      href={person.phoneLink || `tel:${person.phone.replace(/\s+/g, "")}`}
-                      className="bg-white/80 border border-[#EAD5BE] rounded-xl px-3 py-2.5 flex items-center justify-between gap-2 text-left"
-                    >
-                      <span className="text-xs font-semibold text-[#3B1E08]">
-                        {person.name}
-                      </span>
-                      <span className="text-xs text-[#9E1B32] whitespace-nowrap">
-                        {person.phone}
-                      </span>
-                    </a>
-                  ))}
-              </div>
-            </div>
-          )}
+       {/* Family Contacts */}
+<div className="mt-6 pt-4 border-t border-[#EAD5BE]">
+  <p className="text-[#9E1B32] text-xs uppercase tracking-widest font-semibold">
+    For any assistance, contact
+  </p>
+
+  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+    {[
+      { id: "1", name: "Srikanth", phone: "8106868686" },
+      { id: "2", name: "Sivapriya", phone: "9010723544" },
+      { id: "3", name: "Sangeetha", phone: "9182965179" },
+      { id: "4", name: "Poojitha", phone: "8106242929" },
+    ].map((person) => (
+      <a
+        key={person.id}
+        href={`tel:${person.phone}`}
+        className="bg-white/80 border border-[#EAD5BE] rounded-xl px-3 py-2.5 flex items-center justify-between gap-2 text-left"
+      >
+        <span className="text-xs font-semibold text-[#3B1E08]">
+          {person.name}
+        </span>
+        <span className="text-xs text-[#9E1B32] whitespace-nowrap">
+          {person.phone}
+        </span>
+      </a>
+    ))}
+  </div>
+</div>
 
           {onReplayEntrance && (
             <button
