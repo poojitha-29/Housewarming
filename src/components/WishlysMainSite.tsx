@@ -272,25 +272,7 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
     setTimeout(() => setLinkCopied(false), 2500);
   };
 
-  // Digital Blessings State
-  const [guestName, setGuestName] = useState("");
-  const [guestMsg, setGuestMsg] = useState("");
-  const [submittedBlessing, setSubmittedBlessing] = useState(false);
-  const [blessingsList, setBlessingsList] = useState([
-    { name: "Ravi & Sunitha", msg: "Wishing you both and the girls endless love and happiness in Flat 1208! Congratulations!" },
-    { name: "Prasad Family", msg: "May this Grihapravesham bring eternal health, prosperity and joy into your beautiful new home! 🙏" },
-  ]);
-
-  const handleAddBlessing = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!guestName.trim() || !guestMsg.trim()) return;
-    setBlessingsList((prev) => [{ name: guestName.trim(), msg: guestMsg.trim() }, ...prev]);
-    setGuestName("");
-    setGuestMsg("");
-    setSubmittedBlessing(true);
-    setTimeout(() => setSubmittedBlessing(false), 3000);
-  };
-
+  
   return (
     <div
       className="min-h-screen text-[#3B1E08] font-sans antialiased overflow-x-hidden relative selection:bg-[#E0A458] selection:text-white"
@@ -832,65 +814,56 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
           </div>
         </section>
 
-        {/* ── SECTION 6: GUEST BLESSINGS BOOK ── */}
-        <section id="blessings" className="pt-16 px-6 text-center">
-          <p
-            className="text-[#9E1B32] text-xl font-script"
-            style={{ fontFamily: "'Great Vibes', cursive" }}
-          >
-            Warm wishes
-          </p>
+        
+       
+{/* ── SECTION 6: SRI SATYANARAYANA SWAMY VRATAM ── */}
+<section id="blessings" className="pt-16 px-6 text-center">
+  <p
+    className="text-[#9E1B32] text-xl font-script"
+    style={{ fontFamily: "'Great Vibes', cursive" }}
+  >
+    An Auspicious Beginning
+  </p>
 
-          <h2
-            className="text-2xl sm:text-3xl text-[#3B1E08] font-serif font-bold mt-1"
-            style={{ fontFamily: "'Playfair Display', 'Cormorant Garamond', serif" }}
-          >
-            Guest Blessings
-          </h2>
+  <h2
+    className="text-2xl sm:text-3xl text-[#3B1E08] font-serif font-bold mt-1"
+    style={{ fontFamily: "'Playfair Display', 'Cormorant Garamond', serif" }}
+  >
+    శ్రీ సత్యనారాయణ స్వామి వ్రతం
+  </h2>
 
-          <MarigoldDivider />
+  <MarigoldDivider />
 
-          <form onSubmit={handleAddBlessing} className="bg-white/95 rounded-2xl p-4 border border-[#EAD5BE] shadow-xs text-left">
-            <input
-              type="text"
-              value={guestName}
-              onChange={(e) => setGuestName(e.target.value)}
-              placeholder="Your Name (e.g. Ramesh Family)"
-              required
-              className="w-full bg-[#FFFDF9] border border-[#EAD5BE] rounded-xl px-3 py-2 text-xs text-[#3B1E08] placeholder-[#A1887F] mb-2 focus:outline-none focus:border-[#9E1B32]"
-            />
-            <textarea
-              value={guestMsg}
-              onChange={(e) => setGuestMsg(e.target.value)}
-              placeholder="Leave your blessings for Srikanth & Sivapriya..."
-              required
-              rows={3}
-              className="w-full bg-[#FFFDF9] border border-[#EAD5BE] rounded-xl px-3 py-2 text-xs text-[#3B1E08] placeholder-[#A1887F] mb-2 focus:outline-none focus:border-[#9E1B32] resize-none"
-            />
-            <div className="flex items-center justify-between">
-              {submittedBlessing ? (
-                <span className="text-xs text-[#2E7D32] font-semibold">Thank you for your blessing! 🙏</span>
-              ) : <div />}
-              <button
-                type="submit"
-                className="bg-[#9E1B32] hover:bg-[#7F1426] text-white text-xs font-semibold px-4 py-2 rounded-full shadow-xs flex items-center gap-1.5"
-              >
-                <Send size={12} />
-                <span>Send Blessing</span>
-              </button>
-            </div>
-          </form>
+  <p className="text-xs sm:text-sm text-[#6D4C41] leading-relaxed max-w-sm mx-auto mt-3 mb-6">
+    Seeking the divine blessings of Sri Satyanarayana Swamy
+    for happiness, prosperity and peace in our new home.
+  </p>
 
-          {/* Blessings List */}
-          <div className="mt-4 space-y-2 text-left">
-            {blessingsList.map((b, i) => (
-              <div key={i} className="bg-white/90 p-3.5 rounded-xl border border-[#EAD5BE] shadow-xs">
-                <p className="text-xs font-bold text-[#851D2D]">{b.name}</p>
-                <p className="text-xs text-[#5D4037] mt-0.5 italic">"{b.msg}"</p>
-              </div>
-            ))}
-          </div>
-        </section>
+  <motion.div
+    initial={{ opacity: 0, y: 25 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="w-full max-w-[360px] sm:max-w-[400px] mx-auto"
+  >
+    <div className="rounded-2xl overflow-hidden border-2 border-[#E0A458] shadow-[0_12px_30px_rgba(180,120,60,0.18)] bg-white">
+      <img
+        src="/satyanarayana-vratam.png"
+        alt="Sri Satyanarayana Swamy Vratam"
+        className="block w-full h-auto object-contain"
+        loading="lazy"
+      />
+    </div>
+  </motion.div>
+
+  <p
+    className="text-lg sm:text-xl text-[#9E1B32] mt-6 font-serif"
+    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+  >
+    May His divine blessings always be with us 🙏
+  </p>
+</section>
+
 
         {/* ── FOOTER: OUR DOOR IS ALWAYS OPEN FOR YOU ── */}
         <footer className="pt-16 pb-8 px-6 text-center">
