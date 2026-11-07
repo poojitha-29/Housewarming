@@ -841,10 +841,7 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
 
   <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
     {[
-      { id: "1", name: "Srikanth", phone: "8106868686" },
-      { id: "2", name: "Sivapriya", phone: "9010723544" },
-      { id: "3", name: "Sangeetha", phone: "9182965179" },
-      { id: "4", name: "Poojitha", phone: "8106242929" },
+      { id: "1", name: "Srikanth", phone: "8106868686" }
     ].map((person) => (
       <a
         key={person.id}
