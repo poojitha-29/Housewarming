@@ -346,16 +346,37 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
           </p>
 
           {/* Date & Time Bar */}
-          <div className="mt-5 flex items-center justify-center gap-4 text-[#8D2B0B] text-xs font-semibold">
-            <div className="flex items-center gap-1.5">
-              <Calendar size={14} className="text-[#9E1B32]" />
-              <span>{evNight.displayDate.split(" ")[0]} &amp; {evMorning.displayDate}</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <Clock size={14} className="text-[#9E1B32]" />
-              <span>{evNight.time} &amp; {evMorning.time}</span>
-            </div>
-          </div>
+          {/* Date & Event Details */}
+<div className="mt-5 space-y-4 text-[#8D2B0B] text-xs sm:text-sm font-semibold">
+
+  {/* 25 November */}
+  <div className="grid grid-cols-[105px_1fr] items-center gap-3">
+    <div className="flex items-center justify-center gap-1">
+      <Calendar size={14} className="text-[#9E1B32] shrink-0" />
+      <span>{evNight.displayDate}</span>
+    </div>
+
+    <div className="text-center">
+      <p>{evNight.time}</p>
+      <p>కర్కాటక లగ్నమున</p>
+      <p>{evNight.title}</p>
+    </div>
+  </div>
+
+  {/* 26 November */}
+  <div className="grid grid-cols-[105px_1fr] items-center gap-3">
+    <div className="flex items-center justify-center gap-1">
+      <Calendar size={14} className="text-[#9E1B32] shrink-0" />
+      <span>{evMorning.displayDate}</span>
+    </div>
+
+    <div className="text-center">
+      <p>{evMorning.time}</p>
+      <p>{evMorning.title}</p>
+    </div>
+  </div>
+
+</div>
 
           {/* Row of 5 Traditional Glowing Diyas (Matches Screenshot 3) */}
           <div className="mt-8 flex items-center justify-center gap-3 sm:gap-4">
