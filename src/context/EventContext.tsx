@@ -170,7 +170,7 @@ export const DEFAULT_CONFIG: FullEventConfig = {
       date: "2026-11-26",
       displayDate: "26 November 2026",
       day: "Thursday",
-      time: "ఉదయం 8:00 గంటలకు\nమధ్యాహ్నం 12:00 గంటలకు విందు",
+      time: "ఉదయం 8:00 గంటలనుండిు\nమధ్యాహ్నం 12:00 గంటలకు విందు",
       theme: "morning",
       emoji: "🙏",
       rituals: [
