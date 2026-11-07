@@ -316,29 +316,16 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
           </p>
 
           {/* Sacred Kalash Graphic (Matches Screenshot 3) */}
-          <div className="my-5 flex justify-center">
-            <div className="relative w-20 h-24 flex flex-col items-center justify-end">
-              {/* Coconut (Shriphal) */}
-              <div className="w-8 h-8 rounded-full bg-[#5D3314] shadow-sm z-20 flex items-center justify-center -mb-2 border border-[#3E1E08]">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#3E1E08]" />
-              </div>
-              {/* Mango Leaves (Amra Pallav) */}
-              <div className="relative w-16 h-8 z-10 flex justify-center">
-                <div className="w-3.5 h-7 bg-[#2E7D32] rounded-t-full transform -rotate-30 -mr-1 shadow-xs" />
-                <div className="w-4 h-9 bg-[#388E3C] rounded-t-full -my-1 shadow-xs" />
-                <div className="w-3.5 h-7 bg-[#2E7D32] rounded-t-full transform rotate-30 -ml-1 shadow-xs" />
-              </div>
-              {/* Brass Kalash Pot */}
-              <div className="w-16 h-14 rounded-b-[28px] rounded-t-[10px] bg-gradient-to-tr from-[#B78103] via-[#E5A912] to-[#FCE788] border-2 border-[#8A5C02] shadow-md flex flex-col items-center justify-center relative -mt-1">
-                {/* Red Mauli Ribbon */}
-                <div className="w-full h-1.5 bg-[#B71C1C] my-auto shadow-xs" />
-                {/* Red Om / Swastik Symbol */}
-                <span className="text-[#B71C1C] font-bold text-xs -mt-1">ॐ</span>
-              </div>
-            </div>
-          </div>
+          {/* Lord Ganesha */}
+<div className="my-5 flex justify-center">
+  <img
+    src="/ganesha.jpg"
+    alt="Lord Ganesha"
+    className="w-28 h-28 object-contain mx-auto"
+  />
+</div>
 
-          {/* శుభ గృహప్రవేశం 🙏 in Red Cursive Script */}
+          {/* శుభ గృహప్రవేశం  in Red Cursive Script */}
           <h2
             className="text-3xl sm:text-4xl text-[#9E1B32] font-script"
             style={{ fontFamily: "'Great Vibes', cursive" }}
