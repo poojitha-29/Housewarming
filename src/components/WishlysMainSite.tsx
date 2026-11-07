@@ -650,20 +650,14 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
               {sanskritBlessing.shloka}
             </p>
 
-            {/* Sacred Kalash Emblem */}
-            <div className="my-3 flex justify-center">
-              <div className="w-12 h-14 flex flex-col items-center justify-end">
-                <div className="w-5 h-5 rounded-full bg-[#5D3314] -mb-1 border border-[#3E1E08]" />
-                <div className="flex justify-center -mb-0.5">
-                  <div className="w-2.5 h-5 bg-[#2E7D32] rounded-t-full transform -rotate-30 -mr-0.5" />
-                  <div className="w-3 h-6 bg-[#388E3C] rounded-t-full -my-0.5" />
-                  <div className="w-2.5 h-5 bg-[#2E7D32] rounded-t-full transform rotate-30 -ml-0.5" />
-                </div>
-                <div className="w-11 h-9 rounded-b-2xl rounded-t-md bg-gradient-to-tr from-[#B78103] via-[#E5A912] to-[#FCE788] border border-[#8A5C02] flex items-center justify-center">
-                  <span className="text-[#B71C1C] text-[10px] font-bold">ॐ</span>
-                </div>
-              </div>
-            </div>
+            {/* Lord Ganesha */}
+<div className="my-5 flex justify-center">
+  <img
+    src="/ganesha.jpg"
+    alt="Lord Ganesha"
+    className="w-28 h-28 object-contain mx-auto"
+  />
+</div>
 
             <p
               className="relative text-[27px] leading-tight text-[#9E1B32] font-semibold font-serif drop-shadow-[0_1px_0_rgba(201,154,67,0.25)]"
