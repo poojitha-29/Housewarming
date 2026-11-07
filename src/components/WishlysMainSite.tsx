@@ -358,7 +358,6 @@ export default function WishlysMainSite({ onReplayEntrance }: WishlysMainSitePro
 
     <div className="text-center">
       <p>{evNight.time}</p>
-      <p>కర్కాటక లగ్నమున</p>
       <p>{evNight.title}</p>
     </div>
   </div>
